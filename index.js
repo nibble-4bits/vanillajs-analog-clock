@@ -4,6 +4,9 @@ const hourHand = document.querySelector('#hour-hand');
 const minuteHand = document.querySelector('#minute-hand');
 const secondHand = document.querySelector('#second-hand');
 
+const TICKS_PER_SECOND = 4;
+const INTERVAL = 1000 / TICKS_PER_SECOND;
+
 function removeMarksAndNumbers() {
   const marksAndNumbers = document.querySelectorAll('.mark, .number');
   for (const markOrNumber of marksAndNumbers) {
@@ -61,7 +64,7 @@ function displayTime() {
     hourHand.style.transform = `translate(-50%, 0) rotate(${hourHandDegrees}deg)`;
     minuteHand.style.transform = `translate(-50%, 0) rotate(${minuteHandDegrees}deg)`;
     secondHand.style.transform = `translate(-50%, 0) rotate(${secondHandDegrees}deg)`;
-  }, 250);
+  }, INTERVAL);
 }
 
 // Re-compute marks and numbers positions on window resize
