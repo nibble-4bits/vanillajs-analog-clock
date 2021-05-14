@@ -93,12 +93,6 @@ body {
   background: #f00;
 }
 
-.numeral {
-  position: absolute;
-  font-size: 5rem;
-  transform: translate(-50%, -50%);
-}
-
 .mark {
   position: absolute;
   width: 0.25rem;
