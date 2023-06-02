@@ -47,9 +47,13 @@ function createNumbers() {
 
 function displayTime() {
   const currentDate = new Date();
-  const hourHandDegrees = (currentDate.getHours() % 12) * (360 / 12) + 180;
-  const minuteHandDegrees = currentDate.getMinutes() * (360 / 60) + 180;
-  const secondHandDegrees = currentDate.getSeconds() * (360 / 60) + 180;
+  const hour = currentDate.getHours();
+  const minute = currentDate.getMinutes();
+  const second = currentDate.getSeconds();
+
+  const hourHandDegrees = ((hour % 12) + minute / 60 + second / 3600) * (360 / 12) + 180;
+  const minuteHandDegrees = (minute + second / 60) * (360 / 60) + 180;
+  const secondHandDegrees = second * (360 / 60) + 180;
 
   hourHand.style.transform = `translate(-50%, 0) rotate(${hourHandDegrees}deg)`;
   minuteHand.style.transform = `translate(-50%, 0) rotate(${minuteHandDegrees}deg)`;
@@ -57,9 +61,13 @@ function displayTime() {
 
   setInterval(() => {
     const currentDate = new Date();
-    const hourHandDegrees = (currentDate.getHours() % 12) * (360 / 12) + 180;
-    const minuteHandDegrees = currentDate.getMinutes() * (360 / 60) + 180;
-    const secondHandDegrees = currentDate.getSeconds() * (360 / 60) + 180;
+    const hour = currentDate.getHours();
+    const minute = currentDate.getMinutes();
+    const second = currentDate.getSeconds();
+
+    const hourHandDegrees = ((hour % 12) + minute / 60 + second / 3600) * (360 / 12) + 180;
+    const minuteHandDegrees = (minute + second / 60) * (360 / 60) + 180;
+    const secondHandDegrees = second * (360 / 60) + 180;
 
     hourHand.style.transform = `translate(-50%, 0) rotate(${hourHandDegrees}deg)`;
     minuteHand.style.transform = `translate(-50%, 0) rotate(${minuteHandDegrees}deg)`;
